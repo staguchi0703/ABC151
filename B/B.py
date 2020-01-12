@@ -16,6 +16,16 @@ sys.stdin=f
 ##################################
 # %%
 # 以下ペースト可
-num_list = [int(item) for item in input().split()]
-print('B', num_list)
+N, K, M = [int(item) for item in input().split()]
+point_list = [int(item) for item in input().split()]
+
+delta_target = M*N - sum(point_list)
+
+if delta_target > K:
+    print('-1')
+else:
+    if delta_target >= 0:
+        print(delta_target)
+    else:
+        print(0)
 

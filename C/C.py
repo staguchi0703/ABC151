@@ -16,6 +16,30 @@ sys.stdin=f
 ##################################
 # %%
 # 以下ペースト可
-num_list = [int(item) for item in input().split()]
-print('C', num_list)
+N, M = [int(item) for item in input().split()]
+ans_list = [input().split() for _ in range(M)]
+# print(ans_list)
 
+res_ac = 0
+ans_stack = []
+wa_stack = []
+
+for q, ans in ans_list:
+    # print(q, ans)
+    if ans == 'AC':
+        if q not in ans_stack:
+            res_ac += 1
+        ans_stack.append(q)
+    else:
+        if q not in ans_stack:
+            wa_stack.append(q)
+
+res_list = []
+for i in wa_stack:
+    if i in ans_stack:
+        res_list.append(i)
+
+
+print(res_ac, len(res_list))
+
+            

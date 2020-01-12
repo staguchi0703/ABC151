@@ -16,6 +16,8 @@ sys.stdin=f
 ##################################
 # %%
 # 以下ペースト可
-num_list = [int(item) for item in input().split()]
-print('A', num_list)
+import string
+abc = string.ascii_lowercase
+C = input()
+print(abc[abc.index(C)+1])
 
